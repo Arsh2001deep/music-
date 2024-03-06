@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+
+    <script src="https://kit.fontawesome.com/28713de1eb.js" crossorigin="anonymous"></script>
+   
+</head>
+<body>
+
+<div class="container">
+    <div class="music">
+        <nav>
+             <div class="circle">
+            <i class="fa-solid fa-angle-left fa-2x"></i>
+            </div>
+            <div style="color:rgb(166, 133, 110);; font-style: normal;font-weight: 400;font-size: x-large;padding: 1rem;">
+                <h3>Playing now</h3>
+            </div>
+            <!-- <div>
+                <input type="text" id="searchQuery" placeholder="Enter search query">
+    <button onclick="searchYouTube()">Search</button>
+
+    <div id="results"></div>
+             </div> -->
+             <div class="circle">
+            <i class="fa-solid fa-bars fa-2x"></i>
+             </div> 
+             
+            
+    </nav>
+    <img src="img.jpg"  class="image"  alt="errr">
+    <h1>Chinta Ta Chita Chita</h1>
+    <p>Rowdy Rathod</p>
+
+
+    <audio id="song" >
+
+        <source  src="song.mp3" type="audio/mpeg">
+    </audio>
+    <input type="range" value="0" id="progress">
+
+    <div class="controls">
+        <div  onclick="repeat()" ><i class="fa-solid fa-repeat" id="rep"></i></div>
+       
+        <div onclick="bcwrd()"> <i class="fa-solid fa-backward "></i></div>
+        <div onclick="playPause()"> <i class="fa-solid fa-play " id ="ctrl"></i></div>
+        <div onclick="frwrd()"> <i class="fa-solid fa-forward " id="frwrd"></i></div>
+        <div onclick="heart()" ><i class="fa-regular fa-heart" id="heart"></i></div>
+
+      
+    </div>
+    </div>
+
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

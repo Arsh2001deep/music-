@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+box-sizing: border-box;}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: #E9E9E9;
+    display: flex;
+   
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.music{
+    width: 100vw;
+    height: 20vh;
+    padding: 2rem  5rem;
+    background: #E9E9E9;
+    text-align: center;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+nav .circle{
+    border-radius: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    line-height: 40px;
+    background-color: rgb(238, 243, 232);
+    color: rgb(147, 136, 122);
+    box-shadow: 0 9px 8px rgba(148, 146, 146, 0.22);
+}
+
+.image{
+   padding: 30px;
+    height: 40vh;
+ 
+        /* First box shadow for top and left (white color) */
+        box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
+                    /* Second box shadow for bottom and right (grey color) */
+                    5px 5px 10px rgba(128, 128, 128, 0.5);
+ 
+    
+    border-radius: 15%;
+    
+}
+
+.music h1{
+
+    padding: 0.3rem;
+    color: rgb(166, 133, 110);
+}
+
+.music p{
+
+    color: rgb(202, 178, 161);
+}
+
+#progress{
+    -webkit-appearance: none;
+    width: 90vw;
+    height: 6px;
+    background-color: #579064;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 40px 0;
+}
+
+#progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #30693d;
+}
+
+#progress::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1c4425;
+    border: 6px solid rgb(231, 224, 224);
+}
+
+#progress::-ms-thumb {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #30693d;
+}
+
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls div{
+
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: rgb(147, 136, 122);
+    cursor: pointer;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
+    /* Second box shadow for bottom and right (grey color) */
+    5px 5px 10px rgba(128, 128, 128, 0.5);
+}
+
+.controls div:nth-child(3){
+    transform: scale(1.5);
+
+}
+
+
+.colour{
+color: red;
+}
