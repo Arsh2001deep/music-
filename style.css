@@ -71,7 +71,8 @@ nav .circle{
     background-color: #579064;
     border-radius: 7px;
     cursor: pointer;
-    margin: 0;
+    margin-top: 4rem;
+
 }
 
 #progress::-webkit-slider-thumb {
@@ -79,7 +80,8 @@ nav .circle{
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: #30693d;
+    background:  #1c4425;
+    border: 10px solid rgb(231, 224, 224);
 }
 
 #progress::-moz-range-thumb {
@@ -87,7 +89,7 @@ nav .circle{
     height: 20px;
     border-radius: 50%;
     background: #1c4425;
-    border: 8px solid rgb(231, 224, 224);
+    border: 10px solid rgb(231, 224, 224);
 }
 
 #progress::-ms-thumb {
@@ -95,6 +97,7 @@ nav .circle{
     height: 30px;
     border-radius: 50%;
     background: #30693d;
+    border: 10px solid rgb(231, 224, 224);
 }
 
 
