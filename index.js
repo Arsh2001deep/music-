@@ -25,7 +25,7 @@ function playPause() {
 }
 
 if (song.play()) {
-    setInterval(()=>{progress.value=song.currentTime},10)
+    setInterval(()=>{progress.value=song.currentTime},1)
     
 }
 
@@ -35,6 +35,14 @@ progress.onchange =function(){
     ctrl.classList.remove("fa-play")
     ctrl.classList.add("fa-pause")
 }
+
+// Assuming 'song' is your audio element
+song.onended = function() {
+    // Do something when the song ends
+    console.log("The song has ended.");
+    // For example, update progress bar to indicate completion
+    progress.value = progress.max;
+};
 
 
 function repeat() {
@@ -116,8 +124,7 @@ function bcwrd() {
                     var audio = document.getElementById("song");
                     audio.src = firstResult.previewUrl; // Use previewUrl for audio sample
     
-                    // Play the song
-                    playSong();
+                  
                 } else {
                     // No results found
                     alert("No results found");

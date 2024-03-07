@@ -64,7 +64,7 @@ nav .circle{
     color: rgb(202, 178, 161);
 }
 
-#progress{
+/* #progress{
     -webkit-appearance: none;
     width: 90vw;
     height: 6px;
@@ -99,7 +99,7 @@ nav .circle{
     background: #30693d;
     border: 10px solid rgb(231, 224, 224);
 }
-
+ */
 
 .controls{
     display: flex;
