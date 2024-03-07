@@ -6,8 +6,12 @@ let he= document.getElementById("heart")
 
 
 song.onloadeddata =function(){
-    progress.max =song.duration;
+    progress.max =Math.floor(song.duration);
     progress.value=song.currentTime;
+    console.log(song.duration)
+console.log(song.currentTime)
+console.log(progress.value)
+
 }
 
 
@@ -25,9 +29,12 @@ function playPause() {
 }
 
 if (song.play()) {
-    setInterval(()=>{progress.value=song.currentTime},1)
+    setInterval(()=>{progress.value=song.currentTime},0.1)
+
+
     
 }
+
 
 progress.onchange =function(){
     song.play();
@@ -41,7 +48,9 @@ song.onended = function() {
     // Do something when the song ends
     console.log("The song has ended.");
     // For example, update progress bar to indicate completion
-    progress.value = progress.max;
+    progress.value=song.duration;
+    ctrl.classList.add("fa-play")
+    ctrl.classList.remove("fa-pause")
 };
 
 
