@@ -23,22 +23,27 @@
             <div style="color:rgb(166, 133, 110);; font-style: normal;font-weight: 400;font-size: x-large;padding: 1rem;">
                 <h3>Playing now</h3>
             </div>
-            <!-- <div>
-                <input type="text" id="searchQuery" placeholder="Enter search query">
-    <button onclick="searchYouTube()">Search</button>
-
-    <div id="results"></div>
-             </div> -->
+            <div>
+                <input type="text" id="searchQuery" placeholder="Enter song title or artist">
+                <button onclick="searchSong()">Search</button>
+            </div>
+            
+            
+            
              <div class="circle">
             <i class="fa-solid fa-bars fa-2x"></i>
              </div> 
-             
+            
             
     </nav>
-    <img src="img.jpg"  class="image"  alt="errr">
-    <h1>Chinta Ta Chita Chita</h1>
-    <p>Rowdy Rathod</p>
-
+    <img id ="artwork" src="img.jpg"  class="image"  alt="errr">
+    <!-- <h1>Chinta Ta Chita Chita</h1>
+    <p>Rowdy Rathod</p> -->
+    <h1 id="songName"></h1>
+    <p id="artistName"><p>
+    <img id="artwork" src="" alt="">
+    
+    
 
     <audio id="song" >
 
@@ -54,6 +59,7 @@
         <div onclick="frwrd()"> <i class="fa-solid fa-forward " id="frwrd"></i></div>
         <div onclick="heart()" ><i class="fa-regular fa-heart" id="heart"></i></div>
 
+        
       
     </div>
     </div>

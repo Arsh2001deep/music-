@@ -25,7 +25,7 @@ function playPause() {
 }
 
 if (song.play()) {
-    setInterval(()=>{progress.value=song.currentTime},100)
+    setInterval(()=>{progress.value=song.currentTime},0)
     
 }
 
@@ -85,40 +85,44 @@ function bcwrd() {
     
     song.currentTime=song.currentTime-10
     }
+    
 
 
-    // /////
-    // function searchYouTube() {
-    //     var searchQuery = document.getElementById("searchQuery").value;
+
+    ///
+    function searchSong() {
+        var searchQuery = document.getElementById("searchQuery").value;
+        var apiUrl = "https://itunes.apple.com/search?media=music&entity=musicTrack&term=" + encodeURIComponent(searchQuery);
     
-    //     // Your YouTube Data API key
-    //     var apiKey = "AIzaSyA6sb5UpC9oo24Z7L-cUvC1HOwdaA-ax9o";
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data.results && data.results.length > 0) {
+                    // Assuming the first result is the one we want
+                    var firstResult = data.results[0];
+                    var songName = firstResult.trackName;
+                    var artistName = firstResult.artistName;
+                    var artworkUrl = firstResult.artworkUrl100;
     
-    //     // API URL for searching videos
-    //     var apiUrl = "https://www.googleapis.com/youtube/v3/search?key=" + apiKey + "&part=snippet&type=video&q=" + encodeURIComponent(searchQuery);
+                    // Display song name and artist
+                    document.getElementById("songName").textContent = songName;
+                    document.getElementById("artistName").textContent = artistName;
     
-    //     // Clear previous results
-    //     document.getElementById("results").innerHTML = "";
+                    // Display artwork
+                    var artworkImage = document.getElementById("artwork");
+                    artworkImage.src = artworkUrl.replace("100x100", "300x300"); // Replace thumbnail size with larger size
     
-    //     // Fetch data from the YouTube API
-    //     fetch(apiUrl)
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             data.items.forEach(item => {
-    //                 var videoTitle = item.snippet.title;
-    //                 var videoId = item.id.videoId;
-    //                 var videoThumbnail = item.snippet.thumbnails.default.url;
+                    // Update audio source
+                    var audio = document.getElementById("song");
+                    audio.src = firstResult.previewUrl; // Use previewUrl for audio sample
     
-    //                 // Create HTML elements for displaying search results
-    //                 var resultItem = document.createElement("div");
-    //                 resultItem.innerHTML = "<h3>" + videoTitle + "</h3>" +
-    //                                        "<a href='https://www.youtube.com/watch?v=" + videoId + "' target='_blank'>" +
-    //                                        "<img src='" + videoThumbnail + "'></a>";
+                    // Play the song
+                    playSong();
+                } else {
+                    // No results found
+                    alert("No results found");
+                }
+            })
+            .catch(error => console.log(error));
+    }
     
-    //                 // Append the search result to the results container
-    //                 document.getElementById("results").appendChild(resultItem);
-    //             });
-    //         })
-    //         .catch(error => console.log(error));
-    // }
-    /////
