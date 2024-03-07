@@ -3,40 +3,38 @@ let song = document.getElementById("song")
 let ctrl = document.getElementById("ctrl")
 let rep= document.getElementById("rep")
 let he= document.getElementById("heart")
-song.onloadeddata = function() {
-    progress.max = song.duration;
-    progress.value = song.currentTime;
-};
+
+
+song.onloadeddata =function(){
+    progress.max =song.duration;
+    progress.value=song.currentTime;
+}
+
 
 function playPause() {
-    if (ctrl.classList.contains("fa-pause")) {
-        song.pause();
-        ctrl.classList.remove("fa-pause");
-        ctrl.classList.add("fa-play");
-    } else {
-        song.play();
-        ctrl.classList.remove("fa-play");
-        ctrl.classList.add("fa-pause");
-        updateProgress(); // Start updating progress bar continuously
-    }
+        if (ctrl.classList.contains("fa-pause")) {
+            song.pause();
+            ctrl.classList.remove("fa-pause")
+            ctrl.classList.add("fa-play")
+            
+        }else{
+            song.play();
+            ctrl.classList.remove("fa-play")
+            ctrl.classList.add("fa-pause")
+        }
 }
 
-function updateProgress() {
-    progress.value = song.currentTime;
-    if (song.ended) {
-        progress.value = progress.max;
-        ctrl.classList.remove("fa-pause");
-        ctrl.classList.add("fa-play");
-    } else {
-        requestAnimationFrame(updateProgress); // Continue updating progress bar
-    }
+if (song.play()) {
+    setInterval(()=>{progress.value=song.currentTime},10)
+    
 }
 
-progress.oninput = function() {
-    song.currentTime = progress.value;
-    ctrl.classList.remove("fa-play");
-    ctrl.classList.add("fa-pause");
-};
+progress.onchange =function(){
+    song.play();
+    song.currentTime=progress.value;
+    ctrl.classList.remove("fa-play")
+    ctrl.classList.add("fa-pause")
+}
 
 
 function repeat() {
