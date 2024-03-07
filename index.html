@@ -20,12 +20,12 @@
              <div class="circle">
             <i class="fa-solid fa-angle-left fa-2x"></i>
             </div>
-            <div style="color:rgb(166, 133, 110);; font-style: normal;font-weight: 400;font-size: x-large;padding: 1rem;">
+            <!-- <div style="color:rgb(166, 133, 110); font-style: normal;font-weight: 400;font-size: x-large;padding: 1rem;margin:auto;justify-content: center;">
                 <h3>Playing now</h3>
-            </div>
-            <div>
+            </div> -->
+            <div class="search-container">
                 <input type="text" id="searchQuery" placeholder="Enter song title or artist">
-                <button onclick="searchSong()">Search</button>
+                <button onclick="searchSong()"><i class="fa fa-search"></i></button>
             </div>
             
             
@@ -36,11 +36,15 @@
             
             
     </nav>
-    <img id ="artwork" src="img.jpg"  class="image"  alt="errr">
-    <!-- <h1>Chinta Ta Chita Chita</h1>
-    <p>Rowdy Rathod</p> -->
-    <h1 id="songName"></h1>
-    <p id="artistName"><p>
+   
+    <div ><img id="artwork" src="art.png"  class="image"  alt="errr">
+  </div>
+    
+ 
+
+    <h1 id="songName">Play a Song!!</h1>
+    <p id="artistName">Arshdeep<p>
+
     <img id="artwork" src="" alt="">
     
     
@@ -48,17 +52,22 @@
     <audio id="song" >
 
         <source  src="song.mp3" type="audio/mpeg">
-    </audio>
-    <input type="range" value="0" id="progress">
+        
+    </audio> <div class="progress-container">
+        <div class="timer start-timer" id="startTimer">0:00</div>
+        <input type="range" value="0" id="progress">
+        <div class="timer end-timer" id="endTimer">0:00</div>
+    </div>
+    
    
 
     <div class="controls">
-        <div  onclick="repeat()" ><i class="fa-solid fa-repeat" id="rep"></i></div>
+        <div  onclick="repeat()" style="margin: 1rem;color: rgb(147, 136, 122);"><i class="fa-solid fa-repeat" id="rep"></i></div>
        
-        <div onclick="bcwrd()"> <i class="fa-solid fa-backward "></i></div>
-        <div onclick="playPause()"> <i class="fa-solid fa-play " id ="ctrl"></i></div>
-        <div onclick="frwrd()"> <i class="fa-solid fa-forward " id="frwrd"></i></div>
-        <div onclick="heart()" ><i class="fa-regular fa-heart" id="heart"></i></div>
+        <div onclick="bcwrd()" class="ppp"> <i class="fa-solid fa-backward "></i></div>
+        <div onclick="playPause()" class="ppp"> <i class="fa-solid fa-play " id ="ctrl"></i></div>
+        <div onclick="frwrd()" class="ppp"> <i class="fa-solid fa-forward " ></i></div>
+        <div onclick="heart()" style="margin: 1rem; color: rgb(147, 136, 122);"><i class="fa-regular fa-heart" id="heart"></i></div>
 
         
       
