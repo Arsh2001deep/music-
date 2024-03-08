@@ -112,8 +112,18 @@ function url() {
     let search=document.getElementById("searchQuerry").value;
     
 }
+
+
+
+
 ///
 function searchSong() {
+
+
+    ctrl.classList.remove("fa-pause")
+    ctrl.classList.add("fa-play")
+
+
     var searchQuery = document.getElementById("searchQuery").value;
     var apiUrl = "https://itunes.apple.com/search?media=music&entity=musicTrack&term=" + encodeURIComponent(searchQuery);
 
@@ -197,3 +207,4 @@ function formatTime(time) {
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 }
+
